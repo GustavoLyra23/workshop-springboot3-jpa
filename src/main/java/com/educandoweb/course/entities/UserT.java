@@ -24,7 +24,7 @@ public class UserT implements Serializable {
     public UserT() {
     }
 
-    public UserT(String password, String phone, String email, String name, Long id) {
+    public UserT(Long id, String name, String email, String phone, String password) {
         this.password = password;
         this.phone = phone;
         this.email = email;
