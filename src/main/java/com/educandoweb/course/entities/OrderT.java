@@ -1,11 +1,14 @@
 package com.educandoweb.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
+@Data
 @Entity
 public class OrderT implements Serializable {
 
@@ -17,6 +20,7 @@ public class OrderT implements Serializable {
     private Long id;
     private Instant moment;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "clientId")
     private UserT client;
@@ -25,9 +29,10 @@ public class OrderT implements Serializable {
     public OrderT() {
     }
 
-    public OrderT(Instant moment, UserT client) {
+    public OrderT(Long id, Instant moment, UserT client) {
         this.moment = moment;
         this.client = client;
+        this.id = id;
     }
 
     @Override
