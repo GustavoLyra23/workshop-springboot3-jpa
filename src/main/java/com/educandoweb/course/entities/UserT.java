@@ -2,12 +2,13 @@ package com.educandoweb.course.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Data
 @Entity
@@ -24,6 +25,7 @@ public class UserT implements Serializable {
 
     @JsonIgnore
     @OneToMany(mappedBy = "client")
+    @Setter(AccessLevel.NONE)
     private List<OrderT> orderTS = new ArrayList<>();
 
 
@@ -38,17 +40,5 @@ public class UserT implements Serializable {
         this.id = id;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        UserT user = (UserT) o;
-        return Objects.equals(id, user.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 }
+

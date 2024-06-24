@@ -35,7 +35,7 @@ public class UserTServiceTest {
         user2 = new UserT(2L, "Jane Doe", "jane@example.com", "0987654321", "password2");
     }
 
-   //  @Test
+    @Test
     void testGetAllUserT() {
         List<UserT> userList = Arrays.asList(user1, user2);
         when(userTRepository.findAll()).thenReturn(userList);
@@ -47,7 +47,7 @@ public class UserTServiceTest {
         assertEquals(user2, result.get(1));
     }
 
-   // @Test
+    @Test
     void testFindById() {
         when(userTRepository.findById(anyLong())).thenReturn(Optional.of(user1));
 
