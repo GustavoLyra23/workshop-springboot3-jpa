@@ -51,9 +51,4 @@ public class UserT implements Serializable {
     public int hashCode() {
         return Objects.hashCode(id);
     }
-
-    public List<OrderT> getOrders() {
-        return orderTS;
-    }
-
 }

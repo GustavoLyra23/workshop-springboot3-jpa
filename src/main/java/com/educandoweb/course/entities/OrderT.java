@@ -1,6 +1,6 @@
 package com.educandoweb.course.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,9 +18,11 @@ public class OrderT implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
 
-    @JsonIgnore
+
     @ManyToOne
     @JoinColumn(name = "clientId")
     private UserT client;
