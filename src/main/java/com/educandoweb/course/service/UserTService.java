@@ -22,4 +22,9 @@ public class UserTService {
         Optional<UserT> optional = repository.findById(id);
         return optional.get();
     }
+
+    public UserT save(UserT userT) {
+        return repository.save(userT);
+    }
+
 }
