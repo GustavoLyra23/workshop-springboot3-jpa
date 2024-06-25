@@ -39,6 +39,5 @@ public class UserT implements Serializable {
         this.name = name;
         this.id = id;
     }
-
 }
 

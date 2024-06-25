@@ -31,11 +31,20 @@ public class OrderT implements Serializable {
     @JoinColumn(name = "clientId")
     private UserT client;
 
+
     @OneToMany(mappedBy = "id.orderT")
     private Set<OrderItem> items = new HashSet<>();
 
     @OneToOne(mappedBy = "orderT", cascade = CascadeType.ALL)
     private Payment payment;
+
+    public Double getTotal() {
+        double sum = 0;
+        for (OrderItem item : items) {
+            sum += item.getSubtotal();
+        }
+        return sum;
+    }
 
     public OrderT() {
     }
