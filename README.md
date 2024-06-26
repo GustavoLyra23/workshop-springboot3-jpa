@@ -1,50 +1,50 @@
 # Web Application Project
 
-Este é um projeto de aplicação web desenvolvido com o objetivo de proporcionar um sistema de gerenciamento de cursos. O projeto inclui funcionalidades para criar, atualizar, deletar e visualizar cursos, categorias, produtos e usuários.
+This is a web application project developed with the aim of providing a course management system. The project includes functionalities for creating, updating, deleting, and viewing courses, categories, products, and users.
 
-## Funcionalidades
+## Functionalities
 
-- **Gerenciamento de Usuários**: Criação, visualização, atualização e exclusão de usuários.
-- **Gerenciamento de Produtos**: Criação, visualização, atualização e exclusão de produtos.
-- **Gerenciamento de Categorias**: Criação, visualização, atualização e exclusão de categorias.
-- **Gerenciamento de Pedidos**: Criação, visualização, atualização e exclusão de pedidos.
-- **Tratamento de Exceções**: Mecanismo de tratamento de exceções personalizadas.
+- **User Management**: Creation, viewing, updating, and deletion of users.
+- **Product Management**: Creation, viewing, updating, and deletion of products.
+- **Category Management**: Creation, viewing, updating, and deletion of categories.
+- **Order Management**: Creation, viewing, updating, and deletion of orders.
+- **Exception Handling**: Custom exception handling mechanism.
 
-## Estrutura do Projeto
+## Project Structure
 
-O projeto está organizado da seguinte forma:
+The project is organized as follows:
 
-- **src/main/java**: Contém os arquivos de código-fonte Java.
-  - **com/educandoweb/course/entities**: Entidades do sistema.
-  - **com/educandoweb/course/repositories**: Interfaces de repositório para acesso aos dados.
-  - **com/educandoweb/course/resources**: Recursos REST para exposição das APIs.
-  - **com/educandoweb/course/service**: Lógica de negócio e serviços.
-  - **com/educandoweb/course/resources/exceptions**: Manipuladores de exceções.
-  - **com/educandoweb/course/service/exceptions**: Exceções personalizadas.
+- **src/main/java**: Contains the Java source code files.
+  - **com/educandoweb/course/entities**: System entities.
+  - **com/educandoweb/course/repositories**: Repository interfaces for data access.
+  - **com/educandoweb/course/resources**: REST resources for API exposure.
+  - **com/educandoweb/course/service**: Business logic and services.
+  - **com/educandoweb/course/resources/exceptions**: Exception handlers.
+  - **com/educandoweb/course/service/exceptions**: Custom exceptions.
 
-- **src/main/resources**: Contém recursos do projeto, como arquivos de configuração.
-  - **application.properties**: Configurações da aplicação.
+- **src/main/resources**: Contains project resources, such as configuration files.
+  - **application.properties**: Application configurations.
 
-- **src/test/java**: Contém os testes unitários e de integração.
-  - **com/educandoweb/course**: Testes da aplicação.
+- **src/test/java**: Contains unit and integration tests.
+  - **com/educandoweb/course**: Application tests.
 
-## Tecnologias Utilizadas
+## Technologies Used
 
 - **Java 11**
 - **Spring Boot**
 - **JPA / Hibernate**
 - **Maven**
-- **H2 Database** (para testes e desenvolvimento)
+- **H2 Database** (for testing and development)
 
-## Como Executar
+## How to Run
 
-1. **Clone o repositório**:
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
-2. **Compile e execute o projeto**:
+   git clone https://github.com/your-username/your-repository.git
+   cd your-repository
+2. **Compile and run the project**:   
    ```bash
    mvn spring-boot:run
-3. **Acesse a aplicação**:
+3. **Access the application**:
    ```bash
-   Abra o navegador e vá para http://localhost:8080
+   Open your browser and go to http://localhost:8080
