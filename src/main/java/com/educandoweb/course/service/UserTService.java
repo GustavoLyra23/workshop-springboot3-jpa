@@ -4,6 +4,7 @@ import com.educandoweb.course.entities.UserT;
 import com.educandoweb.course.repositories.UserTRepository;
 import com.educandoweb.course.service.exceptions.DatabaseException;
 import com.educandoweb.course.service.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -40,11 +41,13 @@ public class UserTService {
     }
 
     public UserT update(Long id, UserT userT) {
-
-        UserT user = repository.getReferenceById(id);
-        updateData(user, userT);
-        return repository.save(user);
-
+        try {
+            UserT user = repository.getReferenceById(id);
+            updateData(user, userT);
+            return repository.save(user);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException(id);
+        }
     }
 
     private void updateData(UserT user, UserT userT) {
