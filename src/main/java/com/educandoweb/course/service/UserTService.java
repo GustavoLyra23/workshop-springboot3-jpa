@@ -30,4 +30,20 @@ public class UserTService {
     public void deleteById(Long id) {
         repository.deleteById(id);
     }
+
+    public UserT update(Long id, UserT userT) {
+
+        UserT user = repository.getReferenceById(id);
+        updateData(user, userT);
+        return repository.save(user);
+
+    }
+
+    private void updateData(UserT user, UserT userT) {
+        user.setName(userT.getName());
+        user.setEmail(userT.getEmail());
+        user.setPhone(userT.getPhone());
+
+
+    }
 }
