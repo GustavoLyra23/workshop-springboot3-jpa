@@ -42,3 +42,9 @@ O projeto está organizado da seguinte forma:
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
    cd seu-repositorio
+2. **Compile e execute o projeto**:
+   ```bash
+   mvn spring-boot:run
+3. **Acesse a aplicação**:
+   ```bash
+   Abra o navegador e vá para http://localhost:8080
